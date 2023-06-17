@@ -150,6 +150,7 @@ public class App_Frame extends JFrame implements ActionListener {
 
                 try {
                     Decompressor.method(file);
+                    JOptionPane.showMessageDialog(null, "Successfully Decompressed The File and Saved In You're Device.");
                 } catch (Exception ee) {
                     JOptionPane.showMessageDialog(null, ee.toString());
                 }
