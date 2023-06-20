@@ -1,89 +1,64 @@
 package comp_decomp;
 
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.*;
 import java.util.zip.Deflater;
 import java.util.zip.GZIPOutputStream;
 
 public class compressor {
-    private static final int[] COMPRESSION_PERCENTAGES = {
-            10, 20, 30, 40, 50, 60, 70, 80, 90, 100
-    };
-
-    public static void compressFile(File file, int compressionPercentage) throws IOException {
+    public static void compressFile(File file, int compressionLevel) throws IOException {
         String fileDirectory = file.getParent();
-        FileInputStream fis = new FileInputStream(file);
-        FileOutputStream fos = new FileOutputStream(fileDirectory + "/CompressedFile.gz");
+        String compressedFilePath = fileDirectory + "/Compressedfile.gz";
 
-        int compressionLevel = getCompressionLevel(compressionPercentage);
+        // Reads the input bytes from the file
+        FileInputStream fis = new FileInputStream(file);
+
+        // Writes to the specified file
+        FileOutputStream fos = new FileOutputStream(compressedFilePath);
+
+        // Writes compressed file
         Deflater deflater = new Deflater(compressionLevel);
-        GZIPOutputStream gzip = new GZIPOutputStream(fos) {
-            {
-                def.setLevel(compressionLevel);
-            }
-        };
+        GZIPOutputStream gzip = new GZIPOutputStream(fos);
 
         byte[] buffer = new byte[1024];
         int len;
-        while ((len = fis.read(buffer)) != -1) {
-            gzip.write(buffer, 0, len);
-        }
 
+        while ((len = fis.read(buffer)) != -1) {
+            deflater.setInput(buffer, 0, len);
+            deflater.finish();
+
+            while (!deflater.finished()) {
+                int compressedLen = deflater.deflate(buffer);
+                gzip.write(buffer, 0, compressedLen);
+            }
+            deflater.reset();
+        }
         gzip.close();
         fos.close();
         fis.close();
-    }
 
-    private static int getCompressionLevel(int compressionPercentage) {
-        int index = (compressionPercentage - 1) / 10;  // Mapping percentage to array index
-        index = Math.max(0, Math.min(index, COMPRESSION_PERCENTAGES.length - 1));  // Clamp index within array bounds
-        return index;
+        System.out.println("File compressed successfully: " + compressedFilePath);
     }
 
     public static void main(String[] args) throws IOException {
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChooser.setAcceptAllFileFilterUsed(false);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        // File type filter selection
-        FileNameExtensionFilter filter = null;
-        String fileTypeSelection = JOptionPane.showInputDialog("Select the file type to compress (jpg, pdf, word, zip, document):");
-        switch (fileTypeSelection.toLowerCase()) {
-            case "jpg":
-                filter = new FileNameExtensionFilter("JPEG Images", "jpg", "jpeg");
-                break;
-            case "pdf":
-                filter = new FileNameExtensionFilter("PDF Documents", "pdf");
-                break;
-            case "word":
-                filter = new FileNameExtensionFilter("Microsoft Word Documents", "doc", "docx");
-                break;
-            case "zip":
-                filter = new FileNameExtensionFilter("ZIP Archives", "zip");
-                break;
-            case "png":
-                filter = new FileNameExtensionFilter("PNG Images", "png");
-                break;
-            case "document":
-                filter = new FileNameExtensionFilter("All Documents", "jpg", "jpeg", "pdf", "doc", "docx", "zip", "png");
-                break;
-            default:
-                JOptionPane.showMessageDialog(null, "Invalid file type selection!");
-                System.exit(1);
+        System.out.print("Enter the path to the file: ");
+        String filePath = reader.readLine();
+        File file = new File(filePath);
+
+        if (file.exists()) {
+            System.out.print("Enter the compression level (1-10): ");
+            int compressionLevel = Integer.parseInt(reader.readLine());
+
+            if (compressionLevel >= 1 && compressionLevel <= 10) {
+                compressFile(file, compressionLevel);
+            } else {
+                System.out.println("Invalid compression level. Please enter a value between 1 and 10.");
+            }
+        } else {
+            System.out.println("File not found!");
         }
 
-        fileChooser.addChoosableFileFilter(filter);
-        fileChooser.setFileFilter(filter); // Set the selected file filter as the default filter
-
-        int result = fileChooser.showOpenDialog(null);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = fileChooser.getSelectedFile();
-
-            String compressionPercentageInput = JOptionPane.showInputDialog("Select the compression percentage (10-100):");
-            int compressionPercentage = Integer.parseInt(compressionPercentageInput);
-
-            compressFile(selectedFile, compressionPercentage);
-        }
+        reader.close();
     }
 }
