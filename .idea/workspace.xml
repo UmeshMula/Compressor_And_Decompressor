@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fbeb5f56-4a5f-422a-a051-6e56399efde1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Java MiniPro.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/App_Frame.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/App_Frame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp_decomp/Decompressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/comp_decomp/Decompressor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comp_decomp/compressor.java" beforeDir="false" afterPath="$PROJECT_DIR$/comp_decomp/compressor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/.idea/Java MiniPro.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/GUI/App_Frame$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/GUI/App_Frame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/GUI/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/comp_decomp/Decompressor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/comp_decomp/compressor$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Java MiniPro/comp_decomp/compressor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +23,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Java MiniPro_1&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Program Files/java project"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.App_Frame">
     <configuration name="App_Frame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.App_Frame" />
