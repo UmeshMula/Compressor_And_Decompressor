@@ -14,5 +14,7 @@ Tech Stack
 Project UI
 
 ![Comp_Dec1](https://github.com/UmeshMula/Compressor_And_Decompressor/assets/136836947/243fbc39-665e-4378-a117-a44f7d7177b9)
+
 ![Comp_Dec2](https://github.com/UmeshMula/Compressor_And_Decompressor/assets/136836947/2b85ffef-edb2-4e0d-b76e-c360219989cb)
+
 ![Comp_Dec3](https://github.com/UmeshMula/Compressor_And_Decompressor/assets/136836947/a8592db3-928f-4e32-8946-8b4070912c43)
